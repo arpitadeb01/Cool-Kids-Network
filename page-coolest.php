@@ -12,7 +12,67 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 
-<div class="coolest-kid-page">
+<!-- Include Bootstrap CSS directly in the PHP file -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Custom CSS for additional styling -->
+<style>
+    body {
+        background: linear-gradient(to bottom, #ffcccb, #ffffff); /* Gradient background from pink to white */
+        background-repeat: no-repeat; /* Prevent background from repeating */
+        min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    }
+
+    .coolest-kid-page {
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background for content */
+    }
+
+    h1 {
+        color: #343a40; /* Darker text color for the heading */
+        font-weight: bold;
+    }
+
+    table {
+        margin-top: 20px;
+    }
+
+    th {
+        text-align: center; /* Center align table headers */
+    }
+
+    td {
+        vertical-align: middle; /* Center align table data */
+    }
+
+    .alert {
+        margin-top: 20px; /* Space above alerts */
+    }
+
+    /* Table row colors */
+    tr:nth-child(even) {
+        background-color: #ffcccb; /* Light pink for even rows */
+    }
+
+    tr:nth-child(odd) {
+        background-color: #ffffff; /* White for odd rows */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .coolest-kid-page {
+            padding: 10px; /* Less padding on smaller screens */
+        }
+
+        h1 {
+            font-size: 1.5rem; /* Smaller heading on mobile */
+        }
+    }
+</style>
+
+<div class="container coolest-kid-page mt-5">
     <?php
     // Check if the user is logged in
     if (is_user_logged_in()) {
@@ -27,9 +87,9 @@ get_header();
             ));
 
             if (!empty($users)) {
-                echo '<h1>List of Registered Users</h1>';
-                echo '<table border="1" cellpadding="10" cellspacing="0">';
-                echo '<thead>';
+                echo '<h1 class="text-center mb-4">List of Registered Users</h1>';
+                echo '<table class="table table-striped table-bordered">';
+                echo '<thead class="thead-dark">';
                 echo '<tr>';
                 echo '<th>Email</th>';
                 echo '<th>First Name</th>';
@@ -66,13 +126,13 @@ get_header();
                 echo '</tbody>';
                 echo '</table>';
             } else {
-                echo '<p>No registered users found.</p>';
+                echo '<div class="alert alert -warning" role="alert">No registered users found.</div>';
             }
         } else {
-            echo '<p>You do not have permission to view this page.</p>';
+            echo '<div class="alert alert-danger" role="alert">You do not have permission to view this page.</div>';
         }
     } else {
-        echo '<p>Please log in to view this page.</p>';
+        echo '<div class="alert alert-info" role="alert">Please log in to view this page.</div>';
     }
     ?>
 </div>
