@@ -6,6 +6,8 @@ The Cool Kids Network is a user management system that allows users to register,
 - **User  Login**: Users can log in using their email address.
 - **Role-Based Access**: Users can view their character data and, depending on their role, access data of other users.
 - **API for Role Assignment**: A protected endpoint allows maintainers to change user roles.
+- 
+- **Note**: Maintainer's can change roles of other regsitered users from inside the wordpress dashboard as well as through a protected API (using Postman). 
 
 ## Technical Decisions
 - **WordPress**: Chosen for its robust user management and extensibility.
@@ -16,8 +18,8 @@ The Cool Kids Network is a user management system that allows users to register,
 - **User  Story 1**: Implemented user registration and character generation.
 - **User  Story 2**: Created a login system to view character data.
 - **User  Story 3**: Implemented access control for Cooler Kid and Coolest Kid roles.
-- **User  Story 4**: Enabled Coolest Kid role to view email and role of other users.
-- **User  Story 5**: Developed a protected API endpoint for role assignment.
+- **User  Story 4**: Enabled Coolest Kid role to view all the data (name, email, country and role) related to registered users. 
+- **User  Story 5**: Developed a protected API endpoint for role assignment and tested it using POSTMAN. 
 
 ## Additional Notes
 - The codebase is structured for readability and maintainability.
@@ -92,11 +94,4 @@ Conclusion
 The solution implements all of the desired functionality in a WordPress environment, including user registration, login, role-based data access, and role management through an API. The implementation uses modern object-oriented programming (OOP) principles where appropriate and follows best practices for WordPress development. Additionally, the system is observable, resilient, and produces relevant logs for monitoring and error handling.
 
 
-
-
-
-
-
-
-- Tests and CI are set up to ensure 
 
