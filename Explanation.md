@@ -1,8 +1,29 @@
-Problem to be Solved
+## Problem Statement
+The Cool Kids Network is a user management system that allows users to register, log in, and view character data based on their roles. The system differentiates between three user roles: Cool Kid, Cooler Kid, and Coolest Kid, each with varying levels of access to user data.
 
-The problem is to create a proof of concept for the "Cool Kids Network" website, which involves user registration, character creation, login functionality, role-based access control, and an admin API to modify user roles. The project was to be implemented using WordPress. 
+## Technical Specification
+- **User  Registration**: Users can sign up with an email address, which generates a character with random data.
+- **User  Login**: Users can log in using their email address.
+- **Role-Based Access**: Users can view their character data and, depending on their role, access data of other users.
+- **API for Role Assignment**: A protected endpoint allows maintainers to change user roles.
 
-The website will allow users to register with their email, automatically generating a character (random user data) with a default role of "Cool Kid." Users will be able to log in and see their character's details. Depending on their role (Cool Kid, Cooler Kid, or Coolest Kid), users will have varying levels of access to other users' data. The admin will have the ability to modify a user's role through an authenticated API.
+## Technical Decisions
+- **WordPress**: Chosen for its robust user management and extensibility.
+- **OOP**: Used for user management classes to encapsulate functionality.
+- **Logging**: Implemented logging for error tracking and monitoring.
+
+## User Story Fulfillment
+- **User  Story 1**: Implemented user registration and character generation.
+- **User  Story 2**: Created a login system to view character data.
+- **User  Story 3**: Implemented access control for Cooler Kid and Coolest Kid roles.
+- **User  Story 4**: Enabled Coolest Kid role to view email and role of other users.
+- **User  Story 5**: Developed a protected API endpoint for role assignment.
+
+## Additional Notes
+- The codebase is structured for readability and maintainability.
+
+
+Detailed explanation is given below. 
 
 
 Key Functionalities to Implement:
@@ -69,4 +90,13 @@ Achieving the Desired Outcome
 Conclusion
 
 The solution implements all of the desired functionality in a WordPress environment, including user registration, login, role-based data access, and role management through an API. The implementation uses modern object-oriented programming (OOP) principles where appropriate and follows best practices for WordPress development. Additionally, the system is observable, resilient, and produces relevant logs for monitoring and error handling.
+
+
+
+
+
+
+
+
+- Tests and CI are set up to ensure 
 
