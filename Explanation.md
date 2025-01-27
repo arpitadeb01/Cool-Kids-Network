@@ -6,7 +6,7 @@ The Cool Kids Network is a user management system that allows users to register,
 - **User  Login**: Users can log in using their email address.
 - **Role-Based Access**: Users can view their character data and, depending on their role, access data of other users.
 - **API for Role Assignment**: A protected endpoint allows maintainers to change user roles.
-- 
+  
 - **Note**: Maintainer's can change roles of other regsitered users from inside the wordpress dashboard as well as through a protected API (using Postman). 
 
 ## Technical Decisions
