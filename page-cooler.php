@@ -12,7 +12,50 @@ if (!defined('ABSPATH')) {
 get_header();
 ?>
 
-<div class="cooler-kid-page">
+<!-- Include Bootstrap CSS directly in the template -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+    body {
+        background: linear-gradient(to top right, #ffcccb, #ffffff); /* Pink to white gradient from bottom left to upper right */
+        background-size: cover; /* Ensure the gradient covers the entire background */
+        background-repeat: no-repeat; /* Prevent background from repeating */
+        height: 100vh; /* Ensure the body takes the full height of the viewport */
+        margin: 0; /* Remove default margin */
+    }
+
+    .cooler-kid-page {
+        margin: 20px auto;
+        max-width: 800px;
+        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for content */
+        padding: 20px;
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+
+    .table th, .table td {
+        text-align: center;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f5c6cb; /* Light pink for odd rows */
+    }
+
+    .table-striped tbody tr:nth-of-type(even) {
+        background-color: #ffffff; /* White for even rows */
+    }
+
+    .thead-dark {
+        background-color: #d5006d; /* Dark pink for the header */
+        color: white; /* White text for the header */
+    }
+
+    .alert {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container cooler-kid-page">
     <?php
     // Check if the user is logged in
     if (is_user_logged_in()) {
@@ -26,9 +69,10 @@ get_header();
                 'fields' => array('ID'),
             ));
 
-            echo '<h1>List of Registered Users</h1>';
-            echo '<table border="1" cellpadding="10" cellspacing="0">';
-            echo '<thead>';
+            echo '<h1 class="text-center my-4">List of Registered Users</h1>';
+            echo '<div class="table-responsive">';
+            echo '<table class="table table-bordered table-striped">';
+            echo '<thead class="thead-dark">';
             echo '<tr>';
             echo '<th>First Name</th>';
             echo '<th>Last Name</th>';
@@ -62,11 +106,12 @@ get_header();
 
             echo '</tbody>';
             echo '</table>';
+            echo '</div>'; // Close table-responsive
         } else {
-            echo '<p>You do not have permission to view this page.</p>';
+            echo '<p class="alert alert-danger">You do not have permission to view this page.</p>';
         }
     } else {
-        echo '<p>Please log in to view this page.</p>';
+        echo '<p class="alert alert-warning">Please log in to view this page.</p>';
     }
     ?>
 </div>
